@@ -71,6 +71,3 @@ Bu yapılar, SQLite veritabanında oluşturulacak ve Entity Framework kullanıla
 - Entity Framework Core kullanarak veritabanı işlemleri yapılmıştır.
 - Kod içerisinde gerekli açıklamalar ve belirtici isimlendirme kullanılmıştır.
 
-## Lisans
-
-Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için [LICENSE](LICENSE) dosyasına bakınız.
