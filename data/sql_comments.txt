@@ -1,0 +1,36 @@
+-- my sql comments to create cinema.db
+
+-- Filmler tablosunu oluşturma
+CREATE TABLE IF NOT EXISTS Filmler (
+    FilmId INTEGER PRIMARY KEY AUTOINCREMENT,
+    Ad TEXT NOT NULL
+);
+
+-- Salonlar tablosunu oluşturma
+CREATE TABLE IF NOT EXISTS Salonlar (
+    SalonId INTEGER PRIMARY KEY AUTOINCREMENT,
+    Ad TEXT NOT NULL,
+    KoltukKapasitesi INTEGER NOT NULL
+);
+
+-- Seanslar tablosunu oluşturma
+CREATE TABLE IF NOT EXISTS Seanslar (
+    SeansId INTEGER PRIMARY KEY AUTOINCREMENT,
+    TarihSaat TEXT NOT NULL,
+    FilmId INTEGER,
+    SalonId INTEGER,
+    FOREIGN KEY (FilmId) REFERENCES Filmler (FilmId),
+    FOREIGN KEY (SalonId) REFERENCES Salonlar (SalonId)
+);
+
+-- Filmler için örnek veri eklenmesi
+INSERT INTO Filmler (Ad) VALUES ('Film A'), ('Film B'), ('Film C');
+
+-- Salonlar için örnek veri eklenmesi
+INSERT INTO Salonlar (Ad, KoltukKapasitesi) VALUES ('Salon X', 120), ('Salon Y', 150);
+
+-- Seanslar için örnek veri eklenmesi
+INSERT INTO Seanslar (TarihSaat, FilmId, SalonId) VALUES 
+('2022-04-01 13:00', 1, 1),
+('2022-04-01 16:00', 2, 2),
+('2022-04-02 18:00', 1, 1);
